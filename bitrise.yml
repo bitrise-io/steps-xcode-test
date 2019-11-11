@@ -280,9 +280,9 @@ workflows:
             echo "BITRISE_XCRESULT_PATH: $BITRISE_XCRESULT_PATH"
             echo "BITRISE_TEST_DEPLOY_DIR: $BITRISE_TEST_DEPLOY_DIR"
     - script:
-        title: Move .xcresult file to the BITRISE_DEPLOY_DIR
+        title: Move zipped .xcresult file to the BITRISE_DEPLOY_DIR
         inputs:
-        - content: cp $BITRISE_XCRESULT_PATH $BITRISE_DEPLOY_DIR
+        - content: zip -r "$BITRISE_XCRESULT_PATH" "$BITRISE_DEPLOY_DIR"
     - deploy-to-bitrise-io:
     - change-workdir:
         title: Switch back to work dir at the start.
