@@ -282,7 +282,7 @@ workflows:
     - script:
         title: Move zipped .xcresult file to the BITRISE_DEPLOY_DIR
         inputs:
-        - content: zip -r "$BITRISE_XCRESULT_PATH" "$BITRISE_DEPLOY_DIR"
+        - content: zip -r "$BITRISE_DEPLOY_DIR/Test.xcresult.zip" "$BITRISE_XCRESULT_PATH"
     - deploy-to-bitrise-io:
     - change-workdir:
         title: Switch back to work dir at the start.
